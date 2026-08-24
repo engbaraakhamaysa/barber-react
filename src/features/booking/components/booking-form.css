@@ -1,43 +1,242 @@
-h2 {
-  font-size: 22px;
-  font-weight: 600;
-  margin-bottom: 16px;
+/* ========================================
+   BOOKING CARD
+======================================== */
+
+.book-card {
+  width: 100%;
+  max-width: 520px;
+  padding: 30px 24px;
+
+  background: #ffffff;
+
+  border-radius: 16px;
+
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+
+  box-sizing: border-box;
 }
 
-label {
+/* ========================================
+   CARD TITLE
+======================================== */
+
+.book-card__title {
+  margin: 0 0 25px;
+
+  font-size: 24px;
+  font-weight: 700;
+
+  color: #111827;
+}
+
+/* ========================================
+   FORM
+======================================== */
+
+.booking-form {
+  width: 100%;
+}
+
+/* ========================================
+   FORM GROUP
+======================================== */
+
+.form-group {
+  margin-bottom: 18px;
+}
+
+/* ========================================
+   LABEL
+======================================== */
+
+.form-group label {
+  display: block;
+
+  margin-bottom: 7px;
+
   font-size: 14px;
   font-weight: 600;
-  margin-bottom: 6px;
-  display: block;
+
+  color: #374151;
 }
 
-input {
+/* ========================================
+   INPUT
+======================================== */
+
+.form-group input {
   width: 100%;
-  height: 44px;
-  padding: 0 12px 0 12px;
-  border-radius: 8px;
+  height: 48px;
+
+  padding: 0 15px;
+
+  box-sizing: border-box;
+
   border: 1px solid #ddd;
+  border-radius: 12px;
+
+  background: #ffffff;
+
+  color: #111827;
+
+  font-size: 16px;
+
+  outline: none;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
-input:focus {
-  border-color: #999;
+/* ========================================
+   INPUT PLACEHOLDER
+======================================== */
+
+.form-group input::placeholder {
+  color: #9ca3af;
 }
 
-form div {
-  margin-bottom: 16px;
+/* ========================================
+   INPUT FOCUS
+======================================== */
+
+.form-group input:focus {
+  border-color: #2563eb;
+
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
 }
+
+/* ========================================
+   BOOKING SLOTS
+======================================== */
+
+.booking-slots {
+  margin-top: 24px;
+}
+
+/* ========================================
+   MESSAGES
+======================================== */
+
+.booking-message {
+  margin: 0;
+
+  padding: 12px;
+
+  border-radius: 10px;
+
+  background: #f3f4f6;
+
+  color: #4b5563;
+
+  font-size: 14px;
+
+  text-align: center;
+}
+
+.booking-message--error {
+  background: #fef2f2;
+
+  color: #dc2626;
+}
+
+.booking-error {
+  margin: 16px 0 0;
+
+  padding: 12px;
+
+  border-radius: 10px;
+
+  background: #fef2f2;
+
+  color: #dc2626;
+
+  font-size: 14px;
+}
+
+/* ========================================
+   SUBMIT BUTTON
+======================================== */
 
 .submit-button {
   width: 100%;
   height: 48px;
-  font-size: 16px;
-  font-weight: 600;
+
+  margin-top: 24px;
+
   border: none;
-  border-radius: 8px;
+  border-radius: 12px;
+
+  background: #2563eb;
+  color: #ffffff;
+
+  font-size: 16px;
+  font-weight: 700;
+
   cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    transform 0.1s ease,
+    box-shadow 0.2s ease;
 }
 
+/* ========================================
+   BUTTON HOVER
+======================================== */
+
+.submit-button:hover:not(:disabled) {
+  background: #1d4ed8;
+
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+}
+
+/* ========================================
+   BUTTON ACTIVE
+======================================== */
+
+.submit-button:active:not(:disabled) {
+  transform: translateY(1px);
+}
+
+/* ========================================
+   BUTTON DISABLED
+======================================== */
+
 .submit-button:disabled {
-  opacity: 0.5;
+  opacity: 0.6;
+
   cursor: not-allowed;
+
+  box-shadow: none;
+}
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+
+@media (max-width: 600px) {
+  .book-card {
+    max-width: none;
+
+    padding: 24px 18px;
+
+    border-radius: 14px;
+  }
+
+  .book-card__title {
+    font-size: 22px;
+
+    margin-bottom: 22px;
+  }
+
+  .form-group input {
+    height: 46px;
+
+    font-size: 16px;
+  }
+
+  .submit-button {
+    height: 48px;
+  }
 }

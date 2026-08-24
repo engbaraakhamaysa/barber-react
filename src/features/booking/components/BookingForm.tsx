@@ -75,11 +75,11 @@ export default function BookingForm({ barberId, onSuccess }: BookingFormProps) {
   }
 
   return (
-    <section>
-      <h2>Book Appointment</h2>
+    <section className="book-card">
+      <h2 className="book-card__title">Book Appointment</h2>
 
-      <form onSubmit={handleSubmit}>
-        <div className="name">
+      <form className="booking-form" onSubmit={handleSubmit}>
+        <div className="form-group">
           <label htmlFor="booking-name">Customer Name</label>
 
           <input
@@ -93,7 +93,7 @@ export default function BookingForm({ barberId, onSuccess }: BookingFormProps) {
           />
         </div>
 
-        <div className="phone">
+        <div className="form-group">
           <label htmlFor="booking-phone">Phone</label>
 
           <input
@@ -106,12 +106,16 @@ export default function BookingForm({ barberId, onSuccess }: BookingFormProps) {
           />
         </div>
 
-        <section>
-          <h3>Available Times</h3>
+        <section className="booking-slots">
+          {slotsLoading && (
+            <p className="booking-message">Loading available times...</p>
+          )}
 
-          {slotsLoading && <p>Loading available times...</p>}
-
-          {slotsError && <p>{slotsError}</p>}
+          {slotsError && (
+            <p className="booking-message booking-message--error">
+              {slotsError}
+            </p>
+          )}
 
           {!slotsLoading && !slotsError && (
             <BookingSlotSelector
@@ -122,9 +126,9 @@ export default function BookingForm({ barberId, onSuccess }: BookingFormProps) {
           )}
         </section>
 
-        {customerError && <p>{customerError}</p>}
+        {customerError && <p className="booking-error">{customerError}</p>}
 
-        {bookingError && <p>{bookingError}</p>}
+        {bookingError && <p className="booking-error">{bookingError}</p>}
 
         <button
           className="submit-button"
