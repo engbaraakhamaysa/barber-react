@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import { authService } from "../auth.service";
+import Axios from "axios";
 
 export function useRegister() {
   const navigate = useNavigate();
@@ -50,7 +51,12 @@ export function useRegister() {
 
       navigate("/login");
     } catch (error) {
-      setError("Email already registered");
+      if (Axios.isAxiosError(error)) {
+        console.log(error.response?.data?.message);
+        setError(error.response?.data?.message || "Failed to register user");
+      } else {
+        setError("Something went wrong");
+      }
     } finally {
       setLoading(false);
     }

@@ -1,0 +1,161 @@
+/* ========================================
+   BOOKING PAGE
+======================================== */
+
+.booking-page {
+  min-height: 100vh;
+
+  padding: 32px;
+
+  background-color: #f8fafc;
+
+  box-sizing: border-box;
+}
+
+/* ========================================
+   PAGE HEADER
+======================================== */
+
+.booking-page__header {
+  margin-bottom: 32px;
+}
+
+.booking-page__title {
+  margin: 0;
+
+  font-size: 28px;
+  font-weight: 700;
+
+  color: #111827;
+}
+
+.booking-page__subtitle {
+  margin: 8px 0 0;
+
+  font-size: 14px;
+
+  color: #6b7280;
+}
+
+/* ========================================
+   PAGE CONTENT
+======================================== */
+
+.booking-page__content {
+  display: grid;
+
+  grid-template-columns: minmax(0, 520px) minmax(0, 1fr);
+
+  gap: 24px;
+
+  align-items: start;
+}
+
+/* ========================================
+   BOOKING FORM
+======================================== */
+
+.booking-page__form {
+  width: 100%;
+}
+
+/* ========================================
+   TODAY'S BOOKINGS
+======================================== */
+
+.today-bookings {
+  width: 100%;
+}
+
+.today-bookings__header {
+  margin-bottom: 16px;
+}
+
+.today-bookings__title {
+  margin: 0;
+
+  font-size: 22px;
+  font-weight: 700;
+
+  color: #111827;
+}
+
+/* ========================================
+   BOOKINGS LIST
+======================================== */
+
+.today-bookings__list {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 12px;
+}
+
+/* ========================================
+   BOOKING ITEM
+======================================== */
+
+.booking-item {
+  padding: 16px;
+
+  background-color: #ffffff;
+
+  border: 1px solid #e5e7eb;
+
+  border-radius: 12px;
+
+  box-sizing: border-box;
+}
+
+/* ========================================
+   STATES
+======================================== */
+
+.today-bookings__message {
+  padding: 16px;
+
+  border-radius: 12px;
+
+  background-color: #ffffff;
+
+  color: #6b7280;
+
+  font-size: 14px;
+
+  text-align: center;
+}
+
+.today-bookings__message--error {
+  background-color: #fef2f2;
+
+  color: #dc2626;
+}
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+
+@media (max-width: 900px) {
+  .booking-page__content {
+    grid-template-columns: 1fr;
+  }
+
+  .booking-page__form {
+    max-width: 520px;
+  }
+}
+
+@media (max-width: 600px) {
+  .booking-page {
+    padding: 20px 16px;
+  }
+
+  .booking-page__title {
+    font-size: 24px;
+  }
+
+  .booking-page__header {
+    margin-bottom: 24px;
+  }
+}
